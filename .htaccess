@@ -1,6 +1,11 @@
 # BULLOK Properties: redirects from the previous site's addresses
 RewriteEngine On
 
+# Always use https and the address without www
+RewriteCond %{SERVER_PORT} 80 [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://bullokproperties.es/$1 [R=301,NE,L]
+
 # English used to live under /en
 RewriteRule ^en/about/?$ /#team [R=301,NE,L]
 RewriteRule ^en/?$ / [R=301,L]
