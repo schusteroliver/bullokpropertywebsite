@@ -1,0 +1,22 @@
+# BULLOK Properties: redirects from the previous site's addresses
+RewriteEngine On
+
+# English used to live under /en
+RewriteRule ^en/about/?$ /#team [R=301,NE,L]
+RewriteRule ^en/?$ / [R=301,L]
+RewriteRule ^en/(.*)$ / [R=302,L]
+
+# About pages
+RewriteRule ^quienes-somos/?$ /es/#team [R=301,NE,L]
+RewriteRule ^es/quienes-somos/?$ /es/#team [R=301,NE,L]
+RewriteRule ^de/ueber-uns/?$ /de/#team [R=301,NE,L]
+
+# Legal pages
+RewriteRule ^aviso-legal/?$ /aviso-legal.html [R=301,L]
+RewriteRule ^privacidad/?$ /privacidad.html [R=301,L]
+
+# Pages without an equivalent yet (temporary)
+RewriteRule ^checklist/?$ /es/ [R=302,L]
+RewriteRule ^(es|de)/checklist/?$ /$1/ [R=302,L]
+
+ErrorDocument 404 /index.html
