@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BULLOK Properties · Análisis independiente de inmuebles para compradores en Barcelona</title>
+<meta name="description" content="Análisis independiente del inmueble que has encontrado en Barcelona: documentación, edificio y contrato. Honorarios fijos, sin comisión.">
+<style>
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:300;font-display:swap;src:url(../assets/fonts/dm-sans-latin-300-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:400;font-display:swap;src:url(../assets/fonts/dm-sans-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:500;font-display:swap;src:url(../assets/fonts/dm-sans-latin-500-normal.woff2) format("woff2")}
+:root{--ink:#141414;--near:#111;--deep:#0b0b0b;--plat:#B8BCC2;--blue:#395A70;--mist:#DCE7ED;--muted:#5c6166;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--near);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:inherit}img{max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 40px}
+.draft{background:var(--blue);color:#fff;font-size:13px;text-align:center;padding:8px 16px}
+section{padding:112px 0;scroll-margin-top:0}
+.black{background:var(--near);color:#fff}.deep{background:var(--deep);color:#fff}.blue{background:var(--blue);color:#fff}.white{background:#fff;color:var(--ink)}
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;margin:0 0 20px;color:var(--blue)}
+.black .eyebrow,.deep .eyebrow{color:var(--plat)}.blue .eyebrow{color:var(--mist)}
+h1{margin:0;font-weight:300;font-size:clamp(42px,6.2vw,84px);line-height:1.02;letter-spacing:-.03em;max-width:12ch}
+h2{margin:0 0 20px;font-weight:300;font-size:clamp(30px,3.6vw,48px);line-height:1.08;letter-spacing:-.02em;max-width:20ch}
+h3{margin:0 0 10px;font-weight:500;font-size:20px}
+p{margin:0 0 16px}
+.lead{font-size:18px;max-width:56ch;color:#33373b}.black .lead,.deep .lead{color:#c9ccd0}.blue .lead{color:var(--mist)}
+.btn{display:inline-block;padding:16px 30px;border:1px solid #fff;background:#fff;color:var(--ink);text-decoration:none;font-weight:500;font-size:15px;cursor:pointer;font-family:inherit;transition:background .2s,color .2s}
+.btn.ghost{background:transparent;color:#fff}.btn:hover{background:transparent;color:#fff}.btn.ghost:hover{background:#fff;color:var(--ink)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--mist);outline-offset:3px}
+.hero{position:relative;min-height:min(100vh,920px);display:flex;flex-direction:column;padding:0;background:#111 url(../assets/hero-home.jpg) 70% 50%/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.92) 0%,rgba(10,10,10,.74) 40%,rgba(10,10,10,.12) 74%,rgba(10,10,10,.05) 100%)}
+.hero>*{position:relative}.hero .wrap{width:100%}.hero header{background:#111111}
+.bar{display:flex;align-items:center;justify-content:space-between;height:96px;gap:24px}
+.bar img{height:54px;width:auto;display:block}
+nav{display:flex;gap:30px;font-size:15px}nav a{text-decoration:none;color:#d7d9dc}nav a:hover{color:#fff}
+.herotext{margin-top:auto;padding-top:64px;padding-bottom:96px;color:#fff;display:flex;flex-direction:column;gap:26px}
+.herotext .eyebrow{color:var(--mist);margin:0}
+.sub{font-size:clamp(20px,2vw,24px);line-height:1.4;font-weight:300;color:#f1f2f3;max-width:30ch;margin:0}
+.herotext .body{font-size:17px;color:#d7d9dc;max-width:52ch;margin:0}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.split{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:44px}.split h2{margin:0}.split p{margin:0;max-width:46ch}
+.layers{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:1px solid #fff;border-bottom:1px solid #fff}
+.layers div{padding:28px 18px;border-right:1px solid #6d8799;font-size:19px;font-weight:500}.layers div:last-child{border-right:0}
+.layers span{display:block;font-size:12px;letter-spacing:.18em;color:var(--mist);font-weight:400;margin-bottom:10px}
+.two{display:grid;grid-template-columns:5fr 6fr;gap:96px;align-items:center}
+.two img.tall{width:100%;height:600px;object-fit:cover;display:block}
+.rows>div{border-top:1px solid var(--ink);padding:18px 0;display:grid;grid-template-columns:1fr 2fr;gap:16px}.rows{border-bottom:1px solid var(--ink)}
+.rows b{font-size:19px;font-weight:500}.rows span{font-size:16px;color:#33373b}
+.blue .rows>div,.blue .rows{border-color:#fff}.blue .rows span{color:var(--mist)}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px;margin-top:56px}
+.svc{border-top:1px solid #4a4d52;padding-top:28px;display:flex;flex-direction:column}
+.role{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mist)}
+.svc h3{margin-top:10px}.price{font-size:42px;font-weight:300;margin:4px 0}.price small{font-size:14px;color:var(--plat);font-weight:400}
+.q{font-weight:500;margin:10px 0}.svc ul{margin:0 0 24px;padding-left:18px;font-size:15px;color:#c9ccd0}.svc li{margin-bottom:6px}
+.not{margin-top:auto;padding-top:20px;border-top:1px solid #333;font-size:14px;color:#9aa0a6}.not b{display:block;color:#fff;font-weight:500;margin-bottom:4px}
+.note{font-size:15px;color:var(--plat);margin-top:36px}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;margin:48px 0 96px;counter-reset:s}
+.steps div{border-top:1px solid var(--ink);padding-top:18px;counter-increment:s}.steps div::before{content:"0" counter(s);font-size:12px;letter-spacing:.18em;color:var(--blue)}
+.steps p{font-size:15px;color:#33373b}
+table{width:100%;border-collapse:collapse;font-size:15px}th,td{text-align:left;padding:14px 16px 14px 0;border-bottom:1px solid #d5d8db;vertical-align:top}th{font-weight:500;border-bottom:1px solid var(--ink)}
+details{border-bottom:1px solid #333;padding:20px 0}summary{cursor:pointer;font-size:19px;list-style:none}summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;font-weight:300;font-size:24px;line-height:1}details[open] summary::after{content:"–"}details p{margin:12px 0 0;color:#c9ccd0;max-width:70ch}
+.people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:56px}
+.people img{width:100%;height:520px;object-fit:cover;object-position:50% 20%;display:block;margin-bottom:18px}
+.people b{font-size:22px;font-weight:500;display:block}.people span{font-size:15px;color:var(--muted)}
+.teamhead{display:grid;grid-template-columns:5fr 6fr;gap:96px;align-items:end}.teamhead h2{margin:0}.teamhead>p{font-size:clamp(19px,2vw,24px);line-height:1.4;font-weight:300;margin:0}
+form label{display:block;font-size:14px;color:#c9ccd0;margin-bottom:16px}
+form input:not([type=checkbox]),form select,form textarea{display:block;width:100%;margin-top:6px;padding:13px;background:#1b1b1b;border:1px solid #3a3a3a;color:#fff;font:inherit;font-size:16px;border-radius:0}
+form input:focus,form select:focus,form textarea:focus{outline:2px solid var(--mist);outline-offset:1px}
+.opt{color:#8a9096;font-size:12px}.chk{display:flex!important;gap:10px;align-items:flex-start}.chk input{margin-top:4px}
+.btn.light{background:#fff;color:var(--ink)}.fnote{font-size:13px;color:#9aa0a6;margin-top:14px}
+.alt{margin-top:22px;padding-top:18px;border-top:1px solid #3a3a3a;font-size:15px}
+.contact{display:grid;grid-template-columns:5fr 6fr;gap:96px;align-items:start}
+footer{background:var(--deep);color:#8a9096;font-size:13px;padding:40px 0 100px;border-top:1px solid #2a2a2a}
+.fgrid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}footer a{color:#c9ccd0}
+.wa{position:fixed;right:22px;bottom:22px;z-index:20;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;text-decoration:none;padding:13px 22px 13px 18px;font-size:15px;font-weight:500;box-shadow:0 6px 24px rgba(0,0,0,.35);border-radius:999px}
+.wa svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.8}.wa:hover{background:#1ebe5b}
+@media(max-width:960px){nav{display:none}section{padding:72px 0}.wrap{padding:0 24px}.two,.contact,.teamhead{grid-template-columns:1fr;gap:36px}.grid3,.steps,.people{grid-template-columns:1fr}.layers{grid-template-columns:repeat(2,minmax(0,1fr))}.layers div{border-bottom:1px solid #6d8799}.layers div:nth-child(2n){border-right:0}.two img.tall{height:380px}.people img{height:420px}.bar .btn{padding:10px 14px;font-size:14px}.bar img{height:46px}.hero{background-position:78% 50%}.hero::before{background:rgba(10,10,10,.72)}.wa span{display:none}.wa{padding:14px}.rows>div{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.lang{display:flex;gap:10px;font-size:13px;letter-spacing:.08em}.lang a{color:#9aa0a6;text-decoration:none}.lang a[aria-current]{color:#fff;border-bottom:1px solid #fff}
+</style>
+</head>
+<body>
+<div class="draft">Borrador para revisión de Oliver · no público · 24 nov 2026</div>
+<main id="top">
+<section class="hero">
+  <header><div class="wrap bar"><a href="#top" aria-label="BULLOK Properties, inicio"><img src="../assets/logo-dark.png" alt="BULLOK Properties"></a>
+  <nav aria-label="Main"><a href="#stage">Antes de firmar</a><a href="#services">Servicios</a><a href="#how">Cómo trabajamos</a><a href="#team">Equipo</a><a href="#faq">Preguntas</a></nav><span class="lang"><a href="../index.html">EN</a><a href="../es/index.html" aria-current="true">ES</a><a href="../de/index.html">DE</a></span>
+  <a class="btn" href="#contact">Contacto</a></div></header>
+  <div class="wrap herotext">
+    <p class="eyebrow">Para el lugar que vas a llamar hogar</p>
+    <h1>Conoce lo que compras antes de firmar.</h1>
+    <p class="sub">Tu casa debería ser el lugar donde te sientes seguro. Eso empieza por una decisión que entiendes.</p>
+    <p class="body">Analizamos la documentación, el edificio y el contrato del inmueble que has encontrado en Barcelona, y te contamos lo que vemos. Honorarios fijos. Sin comisión. Solo para el comprador.</p>
+    <div class="cta"><a class="btn" href="#contact">Cuéntanos el inmueble</a><a class="btn ghost" href="#services">Ver los tres servicios</a></div>
+  </div>
+</section>
+
+<section class="blue" id="layers"><div class="wrap">
+  <div class="split"><h2>Seis capas, una conclusión.</h2><p class="lead">Cada hallazgo indica su fuente. Lo que no se puede comprobar queda abierto, y lo decimos.</p></div>
+  <div class="layers"><div><span>01</span>Inmueble</div><div><span>02</span>Legal</div><div><span>03</span>Comunidad</div><div><span>04</span>Finanzas</div><div><span>05</span>Mercado</div><div><span>06</span>Decisión</div></div>
+</div></section>
+
+<section class="white" id="why"><div class="wrap two">
+  <img class="tall" src="../assets/eixample-aerial.jpg" alt="Manzanas del Eixample de Barcelona vistas desde el aire">
+  <div>
+    <p class="eyebrow">Por qué existimos</p>
+    <h2>Una casa no es una transacción.</h2>
+    <p class="lead" style="margin-bottom:28px">Es donde vivirá tu familia y donde estará buena parte de tus ahorros. Deberías entrar sabiendo qué hay detrás de las paredes, en los papeles y en las cuentas del edificio.</p>
+    <div class="rows"><div><b>Escuchado</b><span>Empezamos por tu situación y tus plazos, no por un producto.</span></div><div><b>Informado</b><span>Ves lo que dicen de verdad los documentos, el edificio y el contrato.</span></div><div><b>Con el control</b><span>Cada decisión sigue siendo tuya. Nos ocupamos de que la tomes con los ojos abiertos.</span></div></div>
+  </div>
+</div></section>
+
+<section class="black" id="services"><div class="wrap">
+  <p class="eyebrow">Servicios y precios</p>
+  <h2>Tres niveles. Una pregunta cada uno.</h2>
+  <p class="lead">Te recomendamos un nivel tras una breve conversación sobre tu situación. El nivel depende de lo que necesitas de nosotros, no del presupuesto.</p>
+  <div class="grid3"><div class="svc"><span class="role">Identificar</span><h3>CHECK</h3><div class="price">€690 <small>IVA incluido</small></div><p class="q">¿Qué debería preocuparme?</p><ul><li>Revisión inicial de la documentación que nos facilitas</li><li>Informe escrito de riesgos y preguntas abiertas, con fuentes</li><li>Una sesión para explicarte el informe</li></ul><div class="not"><b>No incluye</b>Análisis de los riesgos detectados, visita al inmueble, inspección técnica, revisión de contratos, dictamen jurídico ni una recomendación de comprar o no.</div></div><div class="svc"><span class="role">Analizar</span><h3>INSPECT</h3><div class="price">€2,474 <small>IVA incluido</small></div><p class="q">¿Qué significan realmente estos riesgos?</p><ul><li>Due diligence completa de documentación, contratos y estado técnico</li><li>Inspección del inmueble por un arquitecto técnico e informe técnico</li><li>Diagnóstico de cada riesgo relevante y una conclusión</li><li>Una reunión de resultados</li></ul><div class="not"><b>No incluye</b>Proponer condiciones alternativas, redactar cláusulas o contratos, negociar ni contactar en tu nombre con la agencia, el vendedor o terceros.</div></div><div class="svc"><span class="role">Actuar</span><h3>ADVISE</h3><div class="price">€5,374 <small>IVA incluido</small></div><p class="q">¿Qué hacemos al respecto?</p><ul><li>Todo lo incluido en INSPECT</li><li>Propuesta de condiciones de compra</li><li>Redacción contractual por un abogado en ejercicio independiente</li><li>Orientación sobre el valor del inmueble</li><li>Comunicación con la agencia y otras partes, y apoyo en la negociación</li></ul><div class="not"><b>No incluye</b>Garantía de resultado, tasación oficial, búsqueda de inmuebles, gestión de hipoteca, asesoramiento fiscal, litigios ni obras de reforma.</div></div></div>
+  <p class="note"><a href="../assets/BULLOK_sample_report_INSPECT_ES.pdf" style="color:#fff">Ver un informe de ejemplo (redactado)</a> &nbsp;·&nbsp; Honorarios fijos, IVA incluido. Sin comisión. Sin honorarios de éxito.</p>
+</div></section>
+
+<section class="blue" id="stage"><div class="wrap two" style="align-items:start">
+  <div>
+    <p class="eyebrow">¿En qué punto de la compra estás?</p>
+    <h2>El mejor momento para llamarnos es antes de firmar nada.</h2>
+    <p class="lead">Hasta que firmes una oferta vinculante, pagues una reserva o firmes el contrato de arras, todavía puedes preguntar, poner condiciones y retirarte. Después, tus opciones son más limitadas.</p>
+  </div>
+  <div class="rows"><div><b>Aún no has firmado nada</b><span>Es cuando el análisis resulta más útil: lo que encontremos todavía puede dar forma a tu oferta y a tus condiciones.</span></div><div><b>Reserva pagada</b><span>Primero vemos qué has firmado y qué plazos corren, y te decimos con franqueza qué se puede entregar en el tiempo que queda.</span></div><div><b>Arras firmadas</b><span>Todavía podemos ayudarte a entender el inmueble y a qué te has comprometido. No podemos deshacer un compromiso; si las condiciones aún pueden cambiar lo valora un abogado dentro de ADVISE.</span></div></div>
+</div></section>
+
+<section class="white" id="how"><div class="wrap">
+  <p class="eyebrow">Cómo trabajamos</p>
+  <h2>Un alcance claro antes de empezar.</h2>
+  <div class="steps">
+    <div><h3>Nos cuentas dónde estás</h3><p>El inmueble, lo que has firmado o pagado y la fecha en la que debes decidir.</p></div>
+    <div><h3>Te hacemos unas preguntas</h3><p>Por mensaje o en una llamada de 15 minutos, para entender qué esperas de nosotros.</p></div>
+    <div><h3>Te recomendamos un nivel</h3><p>Con un alcance por escrito: qué incluye, qué no, qué recibes y cuándo.</p></div>
+    <div><h3>Entregamos y explicamos</h3><p>Un informe escrito y una reunión. Cada hallazgo indica su fuente; lo abierto queda abierto.</p></div>
+  </div>
+  <div class="two" id="independence" style="align-items:start">
+    <div><p class="eyebrow">Independencia</p><h2>Para quién trabajamos y cómo cobramos.</h2>
+    <p class="lead">Nos pagas un honorario fijo. Es el mismo compres o no el inmueble, así que nuestra conclusión puede ser cualquiera de las dos.</p>
+    <p class="lead">En una venta habitual, la agencia trabaja por encargo del vendedor. Es un papel legítimo. El nuestro es distinto: nos contrata el comprador y nadie más. No recibimos comisiones, honorarios de éxito ni pagos por recomendación de nadie, y tampoco los pagamos.</p></div>
+    <table><thead><tr><th>BULLOK sí</th><th>BULLOK no</th></tr></thead><tbody>
+    <tr><td>Trabaja solo para el comprador, por un honorario fijo</td><td>Vende, anuncia ni busca inmuebles</td></tr>
+    <tr><td>Identifica, analiza y explica los riesgos del inmueble que has encontrado</td><td>Garantiza que un inmueble no tiene defectos</td></tr>
+    <tr><td>Incorpora a un arquitecto técnico para la inspección</td><td>Ejecuta obras de reforma</td></tr>
+    <tr><td>Cuenta con un abogado independiente para la redacción contractual en ADVISE</td><td>Actúa como despacho de abogados ni asesora en fiscalidad o hipotecas</td></tr>
+    <tr><td>Te dice cuándo te conviene acudir a otro profesional</td><td>Acepta pagos de vendedores o agencias</td></tr></tbody></table>
+  </div>
+</div></section>
+
+<section class="black" id="faq"><div class="wrap">
+  <p class="eyebrow">Preguntas</p>
+  <h2>Lo que los compradores preguntan primero.</h2>
+  <details><summary>¿Buscáis inmuebles?</summary><p>No. Empezamos cuando ya has encontrado un inmueble. No vendemos, anunciamos ni buscamos.</p></details>
+  <details><summary>¿Podéis garantizar que el inmueble no tiene problemas?</summary><p>No, y nadie puede. Informamos de lo que muestran los documentos y la inspección, decimos dónde falta información y dejamos abierto lo que no se puede comprobar.</p></details>
+  <details><summary>Ya he pagado una reserva. ¿Es demasiado tarde?</summary><p>No necesariamente. Todavía podemos analizar el inmueble y explicarte a qué te has comprometido. Antes de que nos contrates te diremos si tu plazo es demasiado corto para que el trabajo sea útil.</p></details>
+  <details><summary>¿Basta con CHECK si estoy a punto de firmar?</summary><p>Normalmente no. CHECK identifica riesgos a partir de documentos; no los analiza ni incluye inspección. Si estás cerca de firmar, lo habitual es que recomendemos INSPECT o ADVISE.</p></details>
+  <details><summary>¿Dónde trabajáis?</summary><p>En Barcelona, su área metropolitana y el Maresme, en español, inglés y alemán.</p></details>
+</div></section>
+
+<section class="white" id="team"><div class="wrap">
+  <div class="teamhead"><div><p class="eyebrow">Los responsables</p><h2>Detrás de cada hallazgo hay un nombre.</h2></div>
+  <p>Cuando compré mi propio piso en Barcelona, sentí que me faltaba información clave. BULLOK existe para que otros compradores tengan una visión clara e independiente antes de comprometerse.</p></div>
+  <div class="people">
+    <div><img src="../assets/founder.jpg" alt="Oliver Schuster, fundador de BULLOK Properties"><b>Oliver Schuster</b><span>Fundador, BULLOK Properties</span></div>
+    <div><img src="../assets/christian.jpg" alt="Christian Díaz Ruiz, arquitecto técnico que colabora con BULLOK Properties"><b>Christian Díaz Ruiz</b><span>Arquitecto Técnico e Ingeniero de Edificación · colegiado n.º 12310 del CAATEEB. Responsable de la inspección y del informe técnico en INSPECT y ADVISE.</span></div>
+  </div>
+  <p class="lead" style="margin-top:40px">En ADVISE, la redacción contractual corre a cargo de un abogado en ejercicio independiente. Recibirás sus datos con la propuesta.</p>
+</div></section>
+
+<section class="black" id="contact"><div class="wrap contact">
+  <div><p class="eyebrow">Contacto</p><h2>Cuéntanos el inmueble.</h2>
+  <p class="lead">Envíanos el enlace del anuncio, en qué punto de la compra estás y la fecha en la que debes decidir. Por favor, no envíes documentos de identidad ni contratos firmados en el primer mensaje. Respondemos en un día laborable.</p></div>
+  <div><form id="enq" novalidate>
+      <label>Tu nombre<input name="name" required autocomplete="name"></label>
+      <label>Correo electrónico<input name="email" type="email" required autocomplete="email"></label>
+      <label>¿En qué punto de la compra estás?
+        <select name="stage" required>
+          <option value="">Elige una opción</option>
+          <option>Sigo buscando</option><option>He encontrado un inmueble, nada firmado</option><option>Oferta hecha o reserva pagada</option><option>Arras firmadas</option><option>Escritura programada</option>
+        </select></label>
+      <label>¿Hay una fecha límite para decidir o firmar? <span class="opt">opcional</span><input name="deadline" placeholder="p. ej., 12 de diciembre"></label>
+      <label>Enlace del anuncio y tu duda principal <span class="opt">opcional</span><textarea name="msg" rows="4"></textarea></label>
+      <label class="chk"><input type="checkbox" name="ok" required> <span>He leído la <a href="../privacidad.html">información de privacidad</a>. Bullok Advisory, S.L. usará estos datos solo para responder a mi consulta.</span></label>
+      <button class="btn light" type="submit">Preparar mi consulta</button>
+      <p class="fnote" id="fmsg" role="status">Se abrirá tu programa de correo con la consulta lista para enviar a hola@bullokproperties.es. Este sitio web no guarda nada.</p>
+    </form>
+  <div class="alt"><a href="mailto:hola@bullokproperties.es">hola@bullokproperties.es</a> &middot; <a href="tel:+34653170007">+34 653 170 007</a> &middot; <a href="https://wa.me/34653170007">WhatsApp</a></div></div>
+</div></section>
+</main>
+<a class="wa" href="https://wa.me/34653170007" aria-label="Escribe a BULLOK Properties por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 19L4 20z" stroke-linejoin="round"/></svg><span>WhatsApp</span></a>
+<footer><div class="wrap fgrid">
+  <div>BULLOK Properties es una marca de Bullok Advisory, S.L.<br>NIF B05904602 · Calle Taulat 40, 1º 2ª, 08005 Barcelona<br>Registro Mercantil de Barcelona, hoja B-666765, inscripción 1ª</div>
+  <div><a href="../aviso-legal.html">Aviso legal</a> · <a href="../privacidad.html">Privacidad</a><br>Este sitio no usa cookies ni seguimiento.</div>
+</div></footer>
+<script>
+document.getElementById('enq').addEventListener('submit',function(e){
+  e.preventDefault();var f=e.target,m=document.getElementById('fmsg');
+  if(!f.checkValidity()){m.textContent='Indica tu nombre, correo y fase de la compra, y marca la casilla de privacidad.';f.reportValidity&&f.reportValidity();return;}
+  var b='Nombre: '+f.name.value+'\nCorreo: '+f.email.value+'\nFase: '+f.stage.value+'\nFecha límite: '+(f.deadline.value||'-')+'\n\n'+(f.msg.value||'');
+  window.location.href='mailto:hola@bullokproperties.es?subject='+encodeURIComponent('Consulta sobre un inmueble')+'&body='+encodeURIComponent(b);
+  m.textContent='Tu programa de correo debería mostrar la consulta. Si no se ha abierto nada, escribe a hola@bullokproperties.es o usa WhatsApp.';
+});
+</script>
+</body>
+</html>
